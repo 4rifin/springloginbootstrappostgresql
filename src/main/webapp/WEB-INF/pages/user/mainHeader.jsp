@@ -6,7 +6,7 @@
     
     
     <meta charset="UTF-8">
-    <title>Taurus</title>
+    <title>Spring Login Bootstrap postgresql</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <link href="<c:url value="/resources/css/bootstrap.min.css"/>" rel="stylesheet" type="text/css" />
     <link href="<c:url value="/resources/css/stylesheets.css"/>" rel="stylesheet" type="text/css" />
@@ -49,6 +49,10 @@
                             <li class="dropdown">
                                 <a href="/login" class="dropdown-toggle" data-toggle="dropdown">
                                 <span class="icon-pencil"></span> login</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="/listUserRegister" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="icon-user"></span> List User</a>
                             </li>
                         </ul>
                     </div>

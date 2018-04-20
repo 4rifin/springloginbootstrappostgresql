@@ -34,12 +34,11 @@ public class UserController {
 	@RequestMapping("/")
 	public String ShowHomePageLogin(HttpServletRequest httpServletRequest,Model model){
 		return path + "/" +"index";
-		//return path + "/" + "view-customer";
 	}
+
 	@RequestMapping("/login")
 	public String ShowHomeLogin(HttpServletRequest httpServletRequest,Model model){
 		return path + "/" +"login";
-		//return path + "/" + "view-customer";
 	}
 	
 	@RequestMapping(value="/register", method=RequestMethod.GET)
@@ -63,7 +62,13 @@ public class UserController {
 		List<User>listUser = userService.findAll();
 		model.addAttribute("listUser",listUser);
 		return path + "/" +"listUser";
-		//return path + "/" + "view-customer";
+	}
+	
+	@RequestMapping(value="/listUserRegister", method=RequestMethod.GET)
+	public String ShowHomePageListUser(HttpServletRequest httpServletRequest,Model model){
+		List<User>listUser = userService.findAll();
+		model.addAttribute("listUser",listUser);
+		return path + "/" +"listUserLogin";
 	}
 	
 	@RequestMapping(value="/reset/password/{id}", method=RequestMethod.GET)
@@ -135,10 +140,13 @@ public class UserController {
 			redirectAttrs.addFlashAttribute("message" , "record User full");
 			return "redirect:" + "/register";
 		}
-		
 		redirectAttrs.addFlashAttribute("messageType" , "Info");
 		redirectAttrs.addFlashAttribute("message" , "Success Register");
 		userService.saveUser(params);
+
+		String uri = httpServletRequest.getScheme() + "://" + httpServletRequest.getServerName() + ":"
+				+ httpServletRequest.getServerPort() + "/login";
+		EmailService.setupEmailLogin(params.getEmail(),uri,params.getUserName(),params.getPassword());
 		
 		return "redirect:" + "/";
 	}

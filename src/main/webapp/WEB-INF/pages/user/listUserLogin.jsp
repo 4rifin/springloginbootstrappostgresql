@@ -29,7 +29,7 @@
     
 </head><body class="bg-img-num1"> 
     
-   <div class="container">        
+    <div class="container">        
         <%@include file="/WEB-INF/pages/user/mainHeader.jsp" %>
         <c:if test="${message != null}">
 		        <div id="messageInfo" class="alert alert-${messageType}">
@@ -37,15 +37,63 @@
 	                    <button type="button" class="close" data-dismiss="alert" onclick="closeMessage();">×</button>
 	            </div>
 	        </c:if>
-        <div class="row">
-                    
-        </div>
-        
-        <%@include file="/WEB-INF/pages/user/mainFooter.jsp" %>
+            <div class="registration-block">
+	            <div class="block block-transparent">
+			        <div class="login-block">
+			            <div class="block block-transparent">
+			                <div class="row">
+					            <div class="col-md-12">
+					                
+					                <div class="block">
+					                    <div class="header">
+					                        <h2>All included</h2>
+					                    </div>
+					                    <div class="content">
+					                        <table class="table table-bordered table-striped table-hover">
+					                            <thead>
+					                                <tr>
+					                                    <th>#</th>
+					                                    <th>User Name</th>
+					                                    <th>Email</th>
+					                                </tr>
+					                            </thead>
+					                            <tbody>
+					                               <c:forEach items="${listUser}" var="listUser" varStatus="theNumber">
+														<tr>
+															<td>${theNumber.index+1}</td>
+															<td>${listUser.userName}</td>
+															<td>${listUser.email}</td>
+														</tr>
+													</c:forEach>                     
+					                            </tbody>
+					                        </table>                       
+					                    </div>
+					                </div>                
+					                
+					            </div>
+					        </div>
+			                
+			            </div>
+			        </div>
+	        	</div>
+	        </div>
+       <%@include file="/WEB-INF/pages/user/mainFooter.jsp" %>
   </div>
   
  <script type="text/javascript" >
+ function validationDelete(id){
+		var x = confirm('are you sure delete');
+		var exec = document.getElementById('delete'+id);
+		if(x){
+			exec.submit();
+			return true;
+		}else{
+			return false;
+		}
+	}
+ 
  function closeMessage(){
 	 document.getElementById('messageInfo').style.display = 'none';
  }
+ 
 </script>

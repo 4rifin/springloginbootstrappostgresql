@@ -61,7 +61,7 @@ public class UserService {
 	}
 	public Boolean isRecordFull(){
 		List<User>listUser = (List<User>) userDao.findAll();
-		if(listUser.size() >= 5){
+		if(listUser.size() >= 10){
 			return true;
 		}
 		return false;
