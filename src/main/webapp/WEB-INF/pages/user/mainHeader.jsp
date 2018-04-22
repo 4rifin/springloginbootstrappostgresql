@@ -25,21 +25,19 @@
         <link href="<c:url value="/resources/css/stylesheets.css"/>" rel="stylesheet" type="text/css" />
         <link href="<c:url value="/resources/js/charts.js"/>" rel="stylesheet" type="text/css" />
     <link href="<c:url value="/resources/js/settings.js"/>" rel="stylesheet" type="text/css" />
-    
-    
+    <link href="<c:url value="/resources/js/actions.js"/>" rel="stylesheet" type="text/css" />
 </head>    
         <div class="row">                   
             <div class="col-md-12">
-                
                  <nav class="navbar brb" role="navigation">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <button type="button" class="navbar-toggle" onclick="navbar();">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-reorder"></span>                            
                         </button>                                                
                         <a class="navbar-brand" href="/"><img src="<c:url value="/resources/img/logo.png"/>"/></a>                                                                                     
                     </div>
-                    <div class="collapse navbar-collapse navbar-ex1-collapse">                                     
+                    <div id="navBar" class="collapse navbar-collapse navbar-ex1-collapse" style="height: auto;">                                     
                         <ul class="nav navbar-nav">
                             <li class="active">
                                 <a href="/">
@@ -57,8 +55,16 @@
                         </ul>
                     </div>
                 </nav>                
-             
             </div>            
         </div>
-        
-       
+<script type="text/javascript" >
+function navbar (){
+	if (document.getElementById("navBar").classList.contains('collapse')){
+		document.getElementById('navBar').classList.remove('collapse');
+		document.getElementById('navBar').classList.add('in');
+	}else{
+		document.getElementById('navBar').classList.remove('in');
+		document.getElementById('navBar').classList.add('collapse');
+	}
+}
+</script>

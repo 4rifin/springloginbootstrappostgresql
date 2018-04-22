@@ -77,7 +77,7 @@
 			        </div>
 	        	</div>
 	        </div>
-       <%@include file="/WEB-INF/pages/user/mainFooter.jsp" %>
+       <%-- <%@include file="/WEB-INF/pages/user/mainFooter.jsp" %> --%>
   </div>
   
  <script type="text/javascript" >

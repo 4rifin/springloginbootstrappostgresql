@@ -28,7 +28,6 @@
     
     
 </head><body class="bg-img-num1"> 
-    
    <div class="container">        
         <%@include file="/WEB-INF/pages/user/mainHeader.jsp" %>
         <c:if test="${message != null}">
@@ -38,14 +37,13 @@
 	            </div>
 	        </c:if>
         <div class="row">
-                    
         </div>
-        
-        <%@include file="/WEB-INF/pages/user/mainFooter.jsp" %>
   </div>
-  
+ <footer> 
+ <%@include file="/WEB-INF/pages/user/mainFooter.jsp" %>
+ </footer>
  <script type="text/javascript" >
  function closeMessage(){
 	 document.getElementById('messageInfo').style.display = 'none';
  }
-</script>
+  </script>

@@ -4,7 +4,6 @@
 <html>
 <head>        
     
-    
     <meta charset="UTF-8">
     <title>Spring Login Bootstrap postgresql</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
@@ -97,7 +96,7 @@
 	        	</div>
 	        </div>
         </form>
-       <%@include file="/WEB-INF/pages/user/mainFooter.jsp" %>
+       <%-- <%@include file="/WEB-INF/pages/user/mainFooter.jsp" %> --%>
   </div>
   
  <script type="text/javascript" >

@@ -3,8 +3,6 @@
     <%@include file="/WEB-INF/pages/includes/taglibs.jsp" %>
 <html>
 <head>        
-    
-    
     <meta charset="UTF-8">
     <title>Spring Login Bootstrap postgresql</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
@@ -28,8 +26,7 @@
     <link href="<c:url value="/resources/js/actions.js"/>" rel="stylesheet" type="text/css" />
     
 </head><body class="bg-img-num1"> 
-    
-    <div class="container">        
+      <div class="container">
          <%@include file="/WEB-INF/pages/user/mainHeader.jsp" %>
          <form id="login"  method="post" action="<c:url value='/login/submit'/>" data-toggle="validator">
 	        
@@ -51,7 +48,7 @@
 			                                <div class="input-group-addon">
 			                                    <span class="icon-user"></span>
 			                                </div>
-			                                <input id="userName" type="text" class="form-control" autocomplete="off" placeholder="Usernsame / Email" name="userName" required />
+			                                <input id="userName" type="text" class="form-control" autocomplete="off" placeholder="Username / Email" name="userName" required />
 			                            </div>
 			                        </div>
 			                    </div>
@@ -84,9 +81,11 @@
 	        	</div>
 	        </div>
         </form>
-        <%@include file="/WEB-INF/pages/user/mainFooter.jsp" %>
   </div>
+  </body>
+  </html>
   
+  <%-- <%@include file="/WEB-INF/pages/user/mainFooter.jsp" %> --%>
  <script type="text/javascript" >
  function validationLogin(){
 		var exec = document.getElementById('login');
